@@ -1,12 +1,12 @@
 plugins {
-    id("shared_build_conventions")
+  id("shared_build_conventions")
 }
 
 group = "${Ampere.GROUP}.api"
 version = Ampere.VERSION
 
 repositories {
-    mavenCentral()
+  mavenCentral()
 }
 
 dependencies {

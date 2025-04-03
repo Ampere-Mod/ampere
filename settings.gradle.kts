@@ -6,17 +6,17 @@
  */
 
 pluginManagement {
-    repositories {
-        mavenLocal()
-        gradlePluginPortal()
-        maven {
-            url = java.net.URI.create("https://maven.neoforged.net/releases")
-        }
+  repositories {
+    mavenLocal()
+    gradlePluginPortal()
+    maven {
+      url = java.net.URI.create("https://maven.neoforged.net/releases")
     }
+  }
 }
 
 plugins {
-    id("org.gradle.toolchains.foojay-resolver-convention") version("0.9.0")
+  id("org.gradle.toolchains.foojay-resolver-convention") version ("0.9.0")
 }
 
 rootProject.name = "ampere"
