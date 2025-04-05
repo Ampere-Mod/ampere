@@ -11,14 +11,18 @@ plugins {
   net.neoforged.moddev
 }
 
-java.toolchain.languageVersion = JavaLanguageVersion.of(21)
-
-version = Ampere.VERSION
-
 repositories {
   mavenLocal()
   gradlePluginPortal()
 }
+
+dependencies {
+
+}
+
+java.toolchain.languageVersion = JavaLanguageVersion.of(21)
+
+version = Ampere.VERSION
 
 base {
   archivesName = Ampere.ID
@@ -119,10 +123,6 @@ val localRuntime: Configuration? by configurations.creating
 
 configurations.runtimeClasspath {
   extendsFrom(localRuntime)
-}
-
-dependencies {
-
 }
 
 publishing {
