@@ -1,13 +1,8 @@
 plugins {
-  id("shared_build_conventions")
+  com.gtlugo.ampere.conventions
 }
 
 group = "${Ampere.GROUP}.api"
-version = Ampere.VERSION
-
-repositories {
-  mavenCentral()
-}
 
 dependencies {
 

@@ -14,3 +14,8 @@ repositories {
   // Use the plugin portal to apply community plugins in convention plugins.
   gradlePluginPortal()
 }
+
+// https://plugins.gradle.org/plugin/net.neoforged.moddev
+dependencies {
+  implementation("net.neoforged.moddev:net.neoforged.moddev.gradle.plugin:2.0.80")
+}

@@ -9,9 +9,7 @@ pluginManagement {
   repositories {
     mavenLocal()
     gradlePluginPortal()
-    maven {
-      url = java.net.URI.create("https://maven.neoforged.net/releases")
-    }
+    maven("https://maven.neoforged.net/releases")
   }
 }
 
