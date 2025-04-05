@@ -1,3 +1,5 @@
+# My favorite thing ever is adding new things to a .gitignore without checking if I can optimize it.
+
 .gradle
 build/
 !gradle/wrapper/gradle-wrapper.jar
