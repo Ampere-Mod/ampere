@@ -19,3 +19,11 @@ repositories {
 dependencies {
   implementation("net.neoforged.moddev:net.neoforged.moddev.gradle.plugin:2.0.80")
 }
+
+tasks.named<Wrapper>("wrapper") {
+  distributionType = Wrapper.DistributionType.BIN
+}
+
+tasks.withType<JavaCompile>().configureEach {
+  options.encoding = "UTF-8" // Use the UTF-8 charset for Java compilation
+}

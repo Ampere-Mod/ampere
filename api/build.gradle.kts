@@ -2,7 +2,7 @@ plugins {
   com.gtlugo.ampere.conventions
 }
 
-group = "${Ampere.GROUP}.api"
+group = ampereGroup("api")
 
 dependencies {
 

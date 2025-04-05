@@ -3,7 +3,11 @@ object Ampere {
   const val ID = "ampere"
   const val DISPLAY_NAME = "Ampere"
   const val GROUP = "com.gtlugo.ampere"
+  const val LICENSE = "MIT"
+  const val AUTHORS = "GTLugo"
+  const val DESCRIPTION = "Create power grids to electrify your world."
   const val REPO = "https://github.com/Ampere-Mod/ampere"
+  const val PACKAGE = "https://maven.pkg.github.com/Ampere-Mod/ampere"
 }
 
 object Parchment {
@@ -12,7 +16,7 @@ object Parchment {
 }
 
 object Minecraft {
-  const val VERSION = "21.1"
+  const val VERSION = "1.21.1"
   const val VERSION_RANGE = "[1.21.1]"
 }
 
@@ -32,4 +36,8 @@ fun verifySettings() {
   //  if (Minecraft.VERSION != NeoForge.VERSION) {
   //    throw GradleException("Minecraft version and NeoForge version must match.")
   //  }
+}
+
+fun ampereGroup(subdomain: String): String {
+  return "${Ampere.GROUP}.${subdomain}"
 }
