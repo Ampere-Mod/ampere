@@ -16,10 +16,6 @@ repositories {
   gradlePluginPortal()
 }
 
-dependencies {
-
-}
-
 java.toolchain.languageVersion = JavaLanguageVersion.of(21)
 
 version = Ampere.VERSION
