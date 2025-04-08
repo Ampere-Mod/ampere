@@ -1,59 +1,65 @@
 package com.gtlugo.ampere
 
-import verifySettings
-
-verifySettings()
+verifyConstants()
 
 plugins {
   idea
+  java
   `java-library`
+  kotlin("jvm")
   `maven-publish`
   net.neoforged.moddev
+  com.gradleup.shadow
 }
 
 repositories {
   mavenLocal()
+  mavenCentral()
   gradlePluginPortal()
+}
+
+dependencies {
+  implementation("com.gtlugo.ampere:shared:unspecified")
 }
 
 java.toolchain.languageVersion = JavaLanguageVersion.of(21)
 
-version = Ampere.VERSION
+version = Constants.Ampere.VERSION
 
 base {
-  archivesName = Ampere.ID
+  archivesName = Constants.Ampere.ID
 }
 
 neoForge {
-  version = NeoForge.VERSION
+  version = Constants.NeoForge.VERSION
 
   parchment {
-    mappingsVersion = Parchment.MAPPINGS_VERSION
-    minecraftVersion = Parchment.MINECRAFT_VERSION
+    mappingsVersion = Constants.Parchment.MAPPINGS_VERSION
+    minecraftVersion = Constants.Parchment.MINECRAFT_VERSION
   }
 
   runs {
     create("client") {
       client()
-      systemProperty("neoforge.enabledGameTestNamespaces", Ampere.ID)
+      systemProperty("neoforge.enabledGameTestNamespaces", Constants.Ampere.ID)
     }
 
     create("server") {
       server()
       programArgument("--nogui")
-      systemProperty("neoforge.enabledGameTestNamespaces", Ampere.ID)
+      systemProperty("neoforge.enabledGameTestNamespaces", Constants.Ampere.ID)
     }
 
     create("gameTestServer") {
       type = "gameTestServer"
-      systemProperty("neoforge.enabledGameTestNamespaces", Ampere.ID)
+      systemProperty("neoforge.enabledGameTestNamespaces", Constants.Ampere.ID)
     }
 
     create("data") {
       data()
       programArguments.addAll(
         "--mod",
-        Ampere.ID,
+        Constants.Ampere.ID,
         "--all",
         "--output",
         file("src/generated/resources/").absolutePath,
@@ -81,38 +87,38 @@ neoForge {
     // define mod <-> source bindings
     // these are used to tell the game which sources are for which mod
     // multi mod projects should define one per mod
-    create(Ampere.ID) {
+    create(Constants.Ampere.ID) {
       sourceSet(sourceSets.main.get())
     }
   }
 }
 
-
-sourceSets.main.get().resources {
-  srcDir("src/generated/resources")
-}
-
 var generateModMetadata = tasks.register<ProcessResources>("generateModMetadata") {
   val replaceProperties = mapOf<String, String>(
-    "minecraft_version"       to Minecraft.VERSION,
-    "minecraft_version_range" to Minecraft.VERSION_RANGE,
-    "neo_version"             to NeoForge.VERSION,
-    "neo_version_range"       to NeoForge.VERSION_RANGE,
-    "loader_version_range"    to NeoForge.LOADER_VERSION,
-    "mod_id"                  to Ampere.ID,
-    "mod_name"                to Ampere.DISPLAY_NAME,
-    "mod_license"             to Ampere.LICENSE,
-    "mod_version"             to Ampere.VERSION,
-    "mod_authors"             to Ampere.AUTHORS,
-    "mod_description"         to Ampere.DESCRIPTION,
-    "mod_repo"                to Ampere.REPO
+    "minecraft_version"       to Constants.Minecraft.VERSION,
+    "minecraft_version_range" to Constants.Minecraft.VERSION_RANGE,
+    "neo_version"             to Constants.NeoForge.VERSION,
+    "neo_version_range"       to Constants.NeoForge.VERSION_RANGE,
+    "loader_version_range"    to Constants.NeoForge.LOADER_VERSION,
+    "mod_id"                  to Constants.Ampere.ID,
+    "mod_name"                to Constants.Ampere.DISPLAY_NAME,
+    "mod_license"             to Constants.Ampere.LICENSE,
+    "mod_version"             to Constants.Ampere.VERSION,
+    "mod_authors"             to Constants.Ampere.AUTHORS,
+    "mod_description"         to Constants.Ampere.DESCRIPTION,
+    "mod_repo"                to Constants.Ampere.REPO
   )
   inputs.properties(replaceProperties)
   expand(replaceProperties)
   from("src/main/templates")
   into("build/generated/sources/modMetadata")
 }
+
+sourceSets.main.get().resources {
+  srcDir("src/generated/resources")
+}
 sourceSets.main.get().resources.srcDir(generateModMetadata)
+//sourceSets.main.get().java.srcDir("../Constants/src/main/kotlin")
 neoForge.ideSyncTask(generateModMetadata)
 
 val localRuntime: Configuration? by configurations.creating
@@ -131,13 +137,18 @@ publishing {
   repositories {
     maven {
       name = "GitHubPackages"
-      url = uri(Ampere.PACKAGE)
+      url = uri(Constants.Ampere.PACKAGE)
       credentials {
         username = System.getenv("GITHUB_ACTOR")
         password = System.getenv("GITHUB_TOKEN")
       }
     }
   }
+}
+
+configurations.shadow {
+  isCanBeConsumed = false
+  isCanBeResolved = true
 }
 
 idea {

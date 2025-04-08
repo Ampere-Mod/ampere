@@ -11,14 +11,20 @@ plugins {
 }
 
 repositories {
+  mavenCentral()
   // Use the plugin portal to apply community plugins in convention plugins.
   gradlePluginPortal()
 }
 
 // https://plugins.gradle.org/plugin/net.neoforged.moddev
 dependencies {
+  implementation("com.gtlugo.ampere:shared:unspecified")
   implementation("net.neoforged.moddev:net.neoforged.moddev.gradle.plugin:2.0.80")
+  implementation("org.jetbrains.kotlin.jvm:org.jetbrains.kotlin.jvm.gradle.plugin:2.1.20")
+  implementation("com.gradleup.shadow:com.gradleup.shadow.gradle.plugin:9.0.0-beta12")
 }
+
+//sourceSets.main.get().java.srcDir("../settings/src/main/kotlin")
 
 tasks.named<Wrapper>("wrapper") {
   distributionType = Wrapper.DistributionType.BIN
@@ -26,4 +32,8 @@ tasks.named<Wrapper>("wrapper") {
 
 tasks.withType<JavaCompile>().configureEach {
   options.encoding = "UTF-8" // Use the UTF-8 charset for Java compilation
+}
+
+kotlin {
+  jvmToolchain(21)
 }

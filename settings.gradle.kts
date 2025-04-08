@@ -8,6 +8,7 @@
 pluginManagement {
   repositories {
     mavenLocal()
+    mavenCentral()
     gradlePluginPortal()
     maven("https://maven.neoforged.net/releases")
   }
@@ -19,4 +20,4 @@ plugins {
 
 rootProject.name = "ampere"
 
-include("api", "core")
+include("api", "core", "settings")
