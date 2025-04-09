@@ -1,6 +1,5 @@
 package com.gtlugo.ampere.core;
 
-import com.gtlugo.ampere.Constants;
 import com.gtlugo.ampere.core.common.block.BlockEntities;
 import com.gtlugo.ampere.core.common.block.FurnaceBlock;
 import com.gtlugo.ampere.core.common.block.ModBlock;
@@ -33,7 +32,7 @@ import java.util.function.Supplier;
 
 @Mod(Ampere.MOD_ID)
 public class Ampere {
-  public static final String MOD_ID = Constants.Ampere.ID + "_core";
+  public static final String MOD_ID = "ampere";
   public static final DeferredRegister.Blocks BLOCK_REGISTRY = DeferredRegister.createBlocks(
     Ampere.MOD_ID);
   public static final DeferredRegister.Items ITEM_REGISTRY = DeferredRegister.createItems(Ampere.MOD_ID);

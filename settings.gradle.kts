@@ -19,5 +19,3 @@ plugins {
 }
 
 rootProject.name = "ampere"
-
-include("api", "core", "settings")
