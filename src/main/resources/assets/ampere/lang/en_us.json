@@ -1,0 +1,13 @@
+{
+  "itemGroup.ampere": "Example Mod Tab",
+  "block.ampere.example_block": "Example Block",
+  "item.ampere.example_item": "Example Item",
+
+  "ampere.configuration.title": "Ampere Configs",
+  "ampere.configuration.section.ampere.common.toml": "Ampere Configs",
+  "ampere.configuration.section.ampere.common.toml.title": "Ampere Configs",
+  "ampere.configuration.items": "Item List",
+  "ampere.configuration.logDirtBlock": "Log Dirt Block",
+  "ampere.configuration.magicNumberIntroduction": "Magic Number Text",
+  "ampere.configuration.magicNumber": "Magic Number"
+}
