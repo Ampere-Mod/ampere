@@ -1,0 +1,10 @@
+﻿{
+  "homepage": "https://ampere.gtlugo.com",
+  "26.3": {
+    "1.0.0-26.3.alpha.0": "First alpha"
+  },
+  "promos": {
+    "26.3-latest": "1.0.0-26.3.alpha.0",
+    "26.3-recommended": "1.0.0-26.3.alpha.0"
+  }
+}

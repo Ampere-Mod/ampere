@@ -5,9 +5,5 @@
 
   "ampere.configuration.title": "Ampere Configs",
   "ampere.configuration.section.ampere.common.toml": "Ampere Configs",
-  "ampere.configuration.section.ampere.common.toml.title": "Ampere Configs",
-  "ampere.configuration.items": "Item List",
-  "ampere.configuration.logDirtBlock": "Log Dirt Block",
-  "ampere.configuration.magicNumberIntroduction": "Magic Number Text",
-  "ampere.configuration.magicNumber": "Magic Number"
+  "ampere.configuration.section.ampere.common.toml.title": "Ampere Configs"
 }

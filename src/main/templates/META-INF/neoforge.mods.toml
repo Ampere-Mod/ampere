@@ -1,7 +1,7 @@
 
 license="${mod_license}"
 
-#issueTrackerURL="https://change.me.to.your.issue.tracker.example.invalid/" #optional
+issueTrackerURL="https://github.com/Ampere-Mod/ampere/issues/" #optional
 
 [[mods]] #mandatory
 
@@ -13,16 +13,16 @@ displayName="${mod_name}" #mandatory
 
 #updateJSONURL="https://change.me.example.invalid/updates.json" #optional
 
-#displayURL="https://change.me.to.your.mods.homepage.example.invalid/" #optional
+displayURL="https://ampere.gtlugo.com/" #optional
 
-#logoFile="examplemod.png" #optional
+iconFile="icon.png" #optional
 
 #credits="" #optional
 
-#authors=""
+authors="GTLugo"
 
 description='''
-Example mod description.
+Create power grids to electrify your world.
 '''
 
 #[[mixins]]
