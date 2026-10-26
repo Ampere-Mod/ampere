@@ -11,7 +11,7 @@ version="${mod_version}" #mandatory
 
 displayName="${mod_name}" #mandatory
 
-#updateJSONURL="https://change.me.example.invalid/updates.json" #optional
+updateJSONURL="https://github.com/Ampere-Mod/ampere/blob/master/update.json" #optional
 
 displayURL="https://ampere.gtlugo.com/" #optional
 
