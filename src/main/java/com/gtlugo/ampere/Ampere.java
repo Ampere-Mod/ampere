@@ -1,5 +1,6 @@
 package com.gtlugo.ampere;
 
+import com.gtlugo.ampere.items.ModItems;
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
@@ -16,26 +17,27 @@ import net.neoforged.neoforge.event.server.ServerStartingEvent;
 
 @Mod(Ampere.MOD_ID)
 public class Ampere {
-    public static final String MOD_ID = "ampere";
-    public static final Logger LOGGER = LogUtils.getLogger();
+  public static final String MOD_ID = "ampere";
+  public static final Logger LOGGER = LogUtils.getLogger();
 
-    public Ampere(IEventBus modEventBus, ModContainer modContainer) {
-        modEventBus.addListener(this::commonSetup);
-        NeoForge.EVENT_BUS.register(this);
-        modEventBus.addListener(this::addCreative);
-        modContainer.registerConfig(ModConfig.Type.LOCAL, Config.SPEC);
-    }
+  public Ampere(IEventBus modEventBus, ModContainer modContainer) {
+    modEventBus.addListener(this::commonSetup);
+    ModItems.register(modEventBus);
+    NeoForge.EVENT_BUS.register(this);
+    modEventBus.addListener(this::addCreative);
+    modContainer.registerConfig(ModConfig.Type.LOCAL, Config.SPEC);
+  }
 
-    private void commonSetup(FMLCommonSetupEvent event) {
+  private void commonSetup(FMLCommonSetupEvent event) {
 
-    }
+  }
 
-    private void addCreative(BuildCreativeModeTabContentsEvent event) {
+  private void addCreative(BuildCreativeModeTabContentsEvent event) {
 
-    }
+  }
 
-    @SubscribeEvent
-    public void onServerStarting(ServerStartingEvent event) {
+  @SubscribeEvent
+  public void onServerStarting(ServerStartingEvent event) {
 
-    }
+  }
 }
