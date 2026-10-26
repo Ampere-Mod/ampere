@@ -33,7 +33,7 @@ public class Ampere {
   }
 
   private void addCreative(BuildCreativeModeTabContentsEvent event) {
-
+    
   }
 
   @SubscribeEvent
