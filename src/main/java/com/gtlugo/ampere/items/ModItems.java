@@ -1,4 +1,4 @@
-﻿package com.gtlugo.ampere.items;
+package com.gtlugo.ampere.items;
 
 import com.gtlugo.ampere.Ampere;
 import net.minecraft.world.item.Item;
