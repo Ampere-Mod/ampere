@@ -1,9 +1,13 @@
 {
-  "itemGroup.ampere": "Example Mod Tab",
-  "block.ampere.example_block": "Example Block",
-  "item.ampere.example_item": "Example Item",
+  "ampere.creative_tab": "Ampere",
 
   "ampere.configuration.title": "Ampere Configs",
   "ampere.configuration.section.ampere.common.toml": "Ampere Configs",
-  "ampere.configuration.section.ampere.common.toml.title": "Ampere Configs"
+  "ampere.configuration.section.ampere.common.toml.title": "Ampere Configs",
+
+  "ampere.item.icon": "Ampere Icon",
+  "ampere.item.icon.tooltip": "You aren't supposed to have this...",
+  "ampere.item.lonsdaleite": "Lonsdaleite",
+
+  "ampere.block.wire": "Wire"
 }
