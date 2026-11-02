@@ -48,5 +48,26 @@ versionRange = "${minecraft_version_range}"
 ordering = "NONE"
 side = "BOTH"
 
+[[dependencies.${ mod_id }]]
+modId = "${api_id}"
+type = "required"
+versionRange = "[${api_version},)"
+ordering = "AFTER"
+side = "BOTH"
+
+[[dependencies.${ mod_id }]]
+modId="cb_multipart"
+type="required"   # or "optional" if multipart support is a soft feature
+versionRange="[${cb_multipart_version},)"
+ordering="AFTER"
+side="BOTH"
+
+[[dependencies.${ mod_id }]]
+modId="codechickenlib"
+type="required"
+versionRange="[${code_chicken_lib_version},)"
+ordering="AFTER"
+side="BOTH"
+
 #[features.${mod_id}]
 #openGLVersion="[3.2,)"

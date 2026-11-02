@@ -16,6 +16,7 @@ sourceSets.main.resources {
 }
 
 repositories {
+    maven { url = 'https://maven.covers1624.net' }
 }
 
 base {
@@ -74,18 +75,28 @@ configurations {
 
 dependencies {
     implementation project(':api')
+
+    implementation "io.codechicken:CodeChickenLib:${minecraft_version}-${code_chicken_lib_version}"
+    implementation "io.codechicken:CBMultipart:${minecraft_version}-${cb_multipart_version}"
+
+    accessTransformers "io.codechicken:CodeChickenLib:${minecraft_version}-${code_chicken_lib_version}"
+    accessTransformers "io.codechicken:CBMultipart:${minecraft_version}-${cb_multipart_version}"
 }
 
 var generateModMetadata = tasks.register("generateModMetadata", ProcessResources) {
     var replaceProperties = [
-            minecraft_version      : minecraft_version,
-            minecraft_version_range: minecraft_version_range,
-            neo_version            : neo_version,
-            loader_version_range   : loader_version_range,
-            mod_id                 : mod_id,
-            mod_name               : mod_name,
-            mod_license            : mod_license,
-            mod_version            : mod_version,
+            minecraft_version           : minecraft_version,
+            minecraft_version_range     : minecraft_version_range,
+            neo_version                 : neo_version,
+            cb_multipart_version        : cb_multipart_version,
+            code_chicken_lib_version    : code_chicken_lib_version,
+            loader_version_range        : loader_version_range,
+            api_id                      : api_id,
+            api_version                 : api_version,
+            mod_id                      : mod_id,
+            mod_name                    : mod_name,
+            mod_license                 : mod_license,
+            mod_version                 : mod_version,
     ]
     inputs.properties replaceProperties
     expand replaceProperties
